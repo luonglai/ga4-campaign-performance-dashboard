@@ -1,4 +1,4 @@
-# Campaign Performance & Funnel Dashboard (GA4 → Tableau Public)
+# Campaign Performance & Funnel Dashboard (GA4 → Tableau)
 
 ## Business question
 Which acquisition channels are driving the most efficient revenue for the
@@ -20,32 +20,32 @@ losing the most users?
 - Data source: Google's public GA4 sample export (Google Merchandise Store),
   November 2020 – early February 2021.
 - **Attribution limitation:** `traffic_source` in this export reflects each
-  user's *first-touch* acquisition channel, not session-level attribution —
+  user's *first-touch* acquisition channel, not session-level attribution, so
   GA4's session-level `collected_traffic_source` field isn't populated in this
   sample. Channel performance here should be read as "channel that first
   brought the user," not "channel that drove this specific session's revenue."
   A production version would need session-level attribution or a proper
   multi-touch model.
 - A small number of rows (3 in the channel-performance extract) carry null
-  values on the underlying attribution fields — consistent with the same
+  values on the underlying attribution fields, which is consistent with the same
   redacted/unattributed pattern already captured by the "Other/Unattributed"
   grouping above, not a separate data-quality issue.
 
 ## Key findings
-- **Organic is the strongest revenue channel**, with referral close behind;
-  paid (cpc) trails both by a wide margin — see Channel Performance.
+- **Organic is the strongest revenue channel**, with referral close behind.
+  Paid (CPC) trails both by a wide margin. See Channel Performance.
 - **The funnel has a steep overall drop-off**: of 77,020 sessions that
-  reached `view_item`, only 4,848 completed `purchase` — a 6.3%
+  reached `view_item`, only 4,848 completed `purchase`, making a 6.3%
   view-to-purchase conversion rate (a ~93.7% drop-off). The single steepest
   stage-to-stage loss is between `view_item` and `add_to_cart`, well before
   checkout.
-- **Revenue is highly volatile day-to-day** rather than trending smoothly —
+- **Revenue is highly volatile day-to-day** rather than trending smoothly with
   sharp spikes recur through November and January, with a sustained lull
   through most of December.
 
 ## Recommendation
 Because the largest single loss in the funnel happens between `view_item` and
-`add_to_cart` — not at checkout — the highest-leverage next step is
+`add_to_cart` instead of at checkout, the highest-leverage next step is
 investigating friction at that specific stage (product page clarity, pricing
 or shipping-cost visibility, or a possible tracking/technical leak) rather
 than spending further on broad top-of-funnel acquisition. On the channel
@@ -65,4 +65,4 @@ given the first-touch limitation noted above.
 
 ## Links
 - Live dashboard: https://public.tableau.com/app/profile/luong.lai/viz/CampaignPerformanceFunnelDashboard/CampaignPerformanceFunnelDashboard
-- Repo: [GitHub link — add once pushed]
+- Repo: https://github.com/luonglai/ga4-campaign-performance-dashboard
