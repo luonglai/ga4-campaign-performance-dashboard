@@ -1,0 +1,5 @@
+funnel_stage,event_name,sessions_reached
+1,view_item,77020
+2,add_to_cart,15188
+3,begin_checkout,11106
+4,purchase,4848
