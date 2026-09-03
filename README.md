@@ -2,6 +2,8 @@
 
 ### [View the interactive dashboard on Tableau](https://public.tableau.com/app/profile/luong.lai/viz/CampaignPerformanceFunnelDashboard/CampaignPerformanceFunnelDashboard)
 
+![Dashboard preview](dashboard_preview.png)
+
 ## Business question
 Which acquisition channels are driving the most efficient revenue for the
 Google Merchandise Store, and at which stage of the purchase funnel are we
