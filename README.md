@@ -1,5 +1,7 @@
 # Campaign Performance & Funnel Dashboard (GA4 → Tableau)
 
+### [View the interactive dashboard on Tableau](https://public.tableau.com/app/profile/luong.lai/viz/CampaignPerformanceFunnelDashboard/CampaignPerformanceFunnelDashboard)
+
 ## Business question
 Which acquisition channels are driving the most efficient revenue for the
 Google Merchandise Store, and at which stage of the purchase funnel are we
@@ -15,6 +17,7 @@ losing the most users?
    `<Other>`) into a single "Other/Unattributed" category for a cleaner read,
    and cross-filtered Channel Performance against Revenue Trend so a viewer
    can isolate any one channel's trend on demand.
+
 ## Key metrics
 
 | Metric | Definition |
