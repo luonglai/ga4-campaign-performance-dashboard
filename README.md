@@ -26,21 +26,6 @@ losing the most users?
 | **Sessions Reached (funnel stage)** | Count of distinct sessions that logged at least one instance of a given GA4 ecommerce event (`view_item`, `add_to_cart`, `begin_checkout`, `purchase`). |
 | **Stage-to-stage drop-off** | Percentage decrease in Sessions Reached between two consecutive funnel stages; used to identify where the largest share of users is lost. |
 
-## Data & limitations
-- Data source: Google's public GA4 sample export (Google Merchandise Store),
-  November 2020 – early February 2021.
-- **Attribution limitation:** `traffic_source` in this export reflects each
-  user's *first-touch* acquisition channel, not session-level attribution, so
-  GA4's session-level `collected_traffic_source` field isn't populated in this
-  sample. Channel performance here should be read as "channel that first
-  brought the user," not "channel that drove this specific session's revenue."
-  A production version would need session-level attribution or a proper
-  multi-touch model.
-- A small number of rows (3 in the channel-performance extract) carry null
-  values on the underlying attribution fields, which is consistent with the same
-  redacted/unattributed pattern already captured by the "Other/Unattributed"
-  grouping above, not a separate data-quality issue.
-
 ## Key findings
 - **Organic is the strongest revenue channel**, with referral close behind.
   Paid (CPC) trails both by a wide margin. See Channel Performance.
@@ -65,6 +50,21 @@ though a full ROI comparison would need per-channel cost data this export
 doesn't include. Any channel-based budget decision should also be validated
 against session-level attribution before being acted on with confidence,
 given the first-touch limitation noted above.
+
+## Data & limitations
+- Data source: Google's public GA4 sample export (Google Merchandise Store),
+  November 2020 – early February 2021.
+- **Attribution limitation:** `traffic_source` in this export reflects each
+  user's *first-touch* acquisition channel, not session-level attribution, so
+  GA4's session-level `collected_traffic_source` field isn't populated in this
+  sample. Channel performance here should be read as "channel that first
+  brought the user," not "channel that drove this specific session's revenue."
+  A production version would need session-level attribution or a proper
+  multi-touch model.
+- A small number of rows (3 in the channel-performance extract) carry null
+  values on the underlying attribution fields, which is consistent with the same
+  redacted/unattributed pattern already captured by the "Other/Unattributed"
+  grouping above, not a separate data-quality issue.
 
 ## How to reproduce
 1. Run `queries.sql` against `bigquery-public-data.ga4_obfuscated_sample_ecommerce`
