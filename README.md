@@ -15,6 +15,16 @@ losing the most users?
    `<Other>`) into a single "Other/Unattributed" category for a cleaner read,
    and cross-filtered Channel Performance against Revenue Trend so a viewer
    can isolate any one channel's trend on demand.
+## Key metrics
+
+| Metric | Definition |
+|---|---|
+| **Total Revenue** | Sum of GA4 `purchase_revenue_in_usd` across all sessions in the sample period (6 Nov 2020 – 4 Feb 2021). |
+| **Sessions (All Channels)** | Distinct GA4 sessions in the sample period, regardless of which funnel stage they reached. |
+| **View-to-Purchase Conversion** | Sessions reaching the `purchase` event ÷ sessions reaching the `view_item` event, expressed as a percentage. Measures overall funnel efficiency, not per-channel conversion. |
+| **Channel Medium (group)** | GA4's raw `traffic_source.medium` field, grouped into four buckets for readability: `cpc` (paid search), `organic` (organic search), `referral` (referring sites), and `other` (remaining/unattributed mediums — see Data & Limitations). |
+| **Sessions Reached (funnel stage)** | Count of distinct sessions that logged at least one instance of a given GA4 ecommerce event (`view_item`, `add_to_cart`, `begin_checkout`, `purchase`). |
+| **Stage-to-stage drop-off** | Percentage decrease in Sessions Reached between two consecutive funnel stages; used to identify where the largest share of users is lost. |
 
 ## Data & limitations
 - Data source: Google's public GA4 sample export (Google Merchandise Store),
